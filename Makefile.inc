@@ -149,7 +149,7 @@ WARNINGS += -Wcast-align
 WARNINGS += -Wdeclaration-after-statement
 WARNINGS += -Wdisabled-optimization
 WARNINGS += -Wendif-labels
-#WARNINGS += -Werror
+WARNINGS += -Werror
 WARNINGS += -Werror=format-security
 WARNINGS += -Wextra
 WARNINGS += -Wformat
