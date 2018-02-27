@@ -92,9 +92,12 @@ LISTNODE2STRUCT(list2timer, struct timer_entry, timer_list);
 #define OLSR_TIMER_ONESHOT    0 /* One shot timer */
 #define OLSR_TIMER_PERIODIC   1 /* Periodic timer */
 
+// KJ: What does it mean when a timer is running?
+
 /* Timer flags */
-#define OLSR_TIMER_RUNNING  ( 1u << 0)   /* this timer is running */
-#define OLSR_TIMER_REMOVED  ( 1u << 1)   /* this timer is tagged for removal */
+//#define OLSR_TIMER_RUNNING  ( 1u << 0)   /* this timer is running */
+//#define OLSR_TIMER_REMOVED  ( 1u << 1)   /* this timer is tagged for removal */
+#define OLSR_TIMER_TODO                 (1<<0)
 
 /* Timers */
 void olsr_init_timers(void);
