@@ -352,6 +352,7 @@ olsr_insert_rt_path(struct rt_path *rtp, struct tc_entry *tc, struct link_entry 
 void
 olsr_delete_rt_path(struct rt_path *rtp)
 {
+  struct rt_entry* rt;
 
   /* remove from the originator tree */
   if (rtp->rtp_rt) {
@@ -372,9 +373,8 @@ olsr_delete_rt_path(struct rt_path *rtp)
   }
 
   /* remove reference from rt_best */
-  struct rt_entry* rt;
   OLSR_FOR_ALL_RT_ENTRIES(rt)
-  if(rt->rt_best == rtp){
+  if (rt->rt_best == rtp){
     rt->rt_best = NULL;
     OLSR_PRINTF(7, "Removed rt_best.\n");
   }
